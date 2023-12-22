@@ -26,7 +26,6 @@ app.config.update({
     'OIDC_INTROSPECTION_AUTH_METHOD': 'client_secret_post'
     # 'OIDC_INTROSPECTION_AUTH_METHOD': 'bearer'
 })
-
 print(os.listdir())
 os.chdir("/home/deepak/keycloak1")
 
@@ -35,8 +34,7 @@ oidc = OpenIDConnect(app)
 keycloak_openid = KeycloakOpenID(server_url="http://localhost:8081/",
                                  client_id="rest_api",
                                  realm_name="flask_app",
-                                 client_secret_key="TpuAEMd2qWVwfNsM6TevLOGmaljrgPeQ"
-)
+                                 client_secret_key="TpuAEMd2qWVwfNsM6TevLOGmaljrgPeQ")
 
 @app.route('/')
 @oidc.require_login
